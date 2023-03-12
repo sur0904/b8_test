@@ -1,0 +1,41 @@
+<html>
+
+<head>  welcome to library </head>
+<title>  welcome to library </title> <br> <br>
+<body>
+    <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+{% if single_book  %}        
+ID  :- <input type ="number" name="library_id" value="{{single_book.id}}" readonly><br><br>
+{% endif  %}        
+Name :- <input type="text" name="library_name" value="{{single_book.name}}"><br> <br>
+Qty :- <input type="text" name="library_qty" value="{{single_book.qty}}"><br>  <br>
+Price :- <input type="text" name="library_price" value="{{single_book.price}}"><br>  <br>
+{% if single_book %}
+ {% if single_book.is_published == True  %}
+ Is_Published:- Yes<input type="radio" name="library_is_published" checked> No<input type="radio" name="library_is_published"><br><br>
+ {%  else  %}
+ Is_Published:- Yes<input type="radio" name="library_is_published" > No<input type="radio" name="library_is_published" checked><br><br>
+ {% endif %}
+ {%  else     %}
+Is_Published:- Yes<input type="radio" name="library_is_published"> No<input type="radio" name="library_is_published"><br><br>
+{%  endif  %}
+<input type="submit" value="submit">
+    </form>
+    
+    <a href="{% url 'show-active-books' %}">show-active-books</a>    
+    <a href="{% url 'show-inactive-books' %}">show-inactive-books</a>       
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
