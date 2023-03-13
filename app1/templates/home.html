@@ -1,0 +1,29 @@
+<html>
+    <head>
+<style>
+
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+<body>
+    <table>
+        <tr>
+        <th> Library name</th>
+        <th> Library Price</th>
+        <th> Library create_date</th>
+        <th> Library is_published</th>
+       </tr>
+       {% for library in lib %}
+       <tr>
+       <td> {{library.lname}}   </td>
+       <td> {{library.lprice}}   </td>
+       <td> {{library.lcreateddate}}  </td>
+       <td> {{library.lis_published}}  </td>
+     </tr>
+      {%  endfor  %}
+</table>
+</body>
+</head>
+</html>
