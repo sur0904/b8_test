@@ -3,6 +3,7 @@ from .models import *
 # Create your views here.
 
 def home(request):
+    print(request.user)
     lib_obj = Library.objects.all()
     # print(lib_obj)
     return render(request,"home.html",context={"lib":lib_obj})
