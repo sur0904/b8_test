@@ -12,3 +12,8 @@ class Library(models.Model):
 
     class Meta:
         db_table = "library"
+
+class Employee(models.model):
+    name = models.CharField(max_length=120) 
+    salary = models.IntegerField()
+    hobby = models.CharField(max_length=120)       
